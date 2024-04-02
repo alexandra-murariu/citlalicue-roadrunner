@@ -5,7 +5,7 @@ from scipy.spatial.distance import cdist
 from scipy.interpolate import interp1d
 
 #import QuadraticModel from pytransit
-from pytransit import QuadraticModel
+from pytransit import RoadRunnerModel
 
 
 class citlali:
@@ -60,7 +60,7 @@ class citlali:
             inc = np.arccos(b/a)
 
             #Let us use PyTransit to compute the transits
-            tm = QuadraticModel(interpolate=False)
+            tm = RoadRunnerModel(interpolate=False)
             tm.set_data(self.time)
             flux = tm.evaluate(k=rp, ldc=ldc, t0=t0, p=p, a=a, i=inc)
             #Set attribute to the class
